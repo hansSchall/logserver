@@ -1,0 +1,48 @@
+@mixin badge-auto-color($color) {
+    @include badge($color, adjust-color($color, $alpha: -.8), $color);
+}
+
+@mixin badge($foreground, $background, $border) {
+    border-radius: .6em;
+    height: 1.4em;
+    min-width: 3em;
+    padding: 0 .5em;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: $background;
+    border: 1px solid $border;
+    gap: .2em;
+    color: $foreground;
+    user-select: none;
+    justify-content: space-around
+}
+
+.badge,
+.badge- {
+    @include badge($c1, #222, $c1);
+}
+
+.badge-red {
+    @include badge-auto-color(#f00);
+}
+
+.badge-orange {
+    @include badge-auto-color(#ff7b00);
+}
+
+.badge-yellow {
+    @include badge-auto-color(#ffd900);
+}
+
+.badge-blue {
+    @include badge-auto-color(#006eff);
+}
+
+.badge-green {
+    @include badge-auto-color(#08b902);
+}
+
+.badge-grey {
+    @include badge-auto-color(#b7b8b7);
+}

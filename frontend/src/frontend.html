@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <base href="/app/">
+        <title>Logserver</title>
+        <style>
+            body{
+                background-color: black;
+                color: #018A01;
+                margin: 0;
+                font-family: "Source Sans Pro", "arial", sans-serif;
+            }
+        </style>
+        <style>
+            #splash{
+                background-color: #018A01;
+                color: black;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                width: 25rem;
+                height: 15rem;
+                border-radius: .5rem;
+                font-family: "Source Sans Pro",'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+            #splash h1{
+                position: absolute;
+                left: 2rem;
+                top: 0rem;
+                font-size: 3rem;
+                font-weight: 300;
+            }
+            #version{
+                position: absolute;
+                right: 1rem;
+                top: 6rem;
+            }
+            #copyright{
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <main id="app">starting</main>
+        <main id="splash">
+            <h1>logserver</h1>
+            <div id="version">Version 0.1.0-beta-1</div>
+            <div id="copyright">© 2022 Hans Schallmoser - All rights reserved</div>
+        </main>
+    </body>
+    <script>
+        window.addEventListener("load", () => {
+            setTimeout(() => {
+                const splash = document.getElementById("splash");
+                splash.remove();
+            }, 1000);
+        })
+    </script>
+</html>

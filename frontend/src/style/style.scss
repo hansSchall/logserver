@@ -1,0 +1,73 @@
+$c1: #018A01;
+
+@import "badges.scss";
+@import "home.scss";
+@import "logview.scss";
+
+* {
+    box-sizing: border-box;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.win-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 3rem;
+    background-color: $c1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 1rem;
+    justify-content: space-between;
+    color: black;
+}
+
+.win-title {
+    font-size: 2rem;
+}
+
+.win-menu {
+    font-size: 1.5rem;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: .3rem;
+    margin-right: .5rem;
+
+    &:hover {
+        background-color: #0005;
+    }
+}
+
+.main-content {
+    position: absolute;
+    top: 3rem;
+    width: 100vw;
+    height: calc(100vh - 3rem);
+    overflow: auto;
+}
+
+.connecting-overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: #0005;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .-box {
+        background-color: #018A01;
+        color: black;
+        font-size: 2rem;
+        padding: 3rem;
+        border-radius: .5rem;
+    }
+}

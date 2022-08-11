@@ -1,0 +1,103 @@
+.log-view {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+
+    .-nav-bar {
+        flex: 0 0 auto;
+        padding: .3rem;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: .2rem;
+    }
+
+    .-main {
+        flex: 1 1 auto;
+    }
+}
+
+.log-view-main {
+    border-collapse: collapse;
+    width: 100%;
+
+    tr {
+        &:hover {
+            background-color: #111;
+        }
+
+        &.loglevel-error td {
+            background-color: #f003;
+        }
+
+        &.loglevel-warn td {
+            background-color: rgba(255, 136, 0, 0.2);
+        }
+
+        &.loglevel-info td {
+            background-color: rgba(104, 104, 104, 0.2);
+        }
+    }
+
+    td:nth-child(4) {
+        width: 100%;
+
+        >* {
+            margin-left: .3rem;
+        }
+    }
+
+}
+
+.select-log-level {
+    background-color: #111;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: .5rem;
+    min-width: 15rem;
+    min-height: 10rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 1rem;
+    padding: 2rem;
+
+    .-log-level {
+
+        font-size: 1.4rem;
+        min-width: 6em !important;
+
+        &.-error {
+            @include badge-auto-color(#f00);
+        }
+
+        &.-warn {
+            @include badge-auto-color(#ff7b00);
+        }
+
+        &.-log {
+            @include badge($c1, #222, $c1);
+        }
+
+        &.-info {
+            @include badge-auto-color(#b7b8b7);
+        }
+
+        &.-clear {
+            @include badge-auto-color(#0051ff);
+        }
+
+        &.-cancel {
+            @include badge($c1, #222, $c1);
+        }
+
+    }
+
+    .-space {
+        margin-top: 0rem;
+    }
+}

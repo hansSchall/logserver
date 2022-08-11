@@ -1,0 +1,27 @@
+.list-item {
+    border-radius: .5rem;
+    margin: .6rem;
+    padding: .5rem;
+    user-select: none;
+    background-color: #080808;
+
+    &:hover {
+        background-color: #111;
+        border-color: $c1;
+
+        .list-item-title {
+            text-decoration: underline;
+        }
+    }
+}
+
+.list-item-title {
+    font-size: 1.4rem;
+}
+
+.list-item-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .3rem;
+    margin-top: .5rem;
+}
