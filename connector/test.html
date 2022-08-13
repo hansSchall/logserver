@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>logserver connector - test</title>
+        <style>
+            body{
+                background-color: black;
+                color: #018A01;
+                margin: 0;
+                font-family: "Source Sans Pro", "arial", sans-serif;
+            }
+        </style>
+        <script src="./connector.js"></script>
+    </head>
+    <body>
+    </body>
+    <script>
+        let connector
+        window.addEventListener("load", () => {
+            connector = new Logserver(new URL("ws://localhost:81/"), "Test");
+        })
+
+        function log(...args){
+            connector.log(...args);
+        }
+    </script>
+</html>
