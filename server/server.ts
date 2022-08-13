@@ -24,6 +24,7 @@ app.ws("/reporter", (ws, req) => {
         const msg = splitcomma(data);
         const msgType = msg.shift() || "";
         if (msgType == "log") {
+            // [target,abstime,reltime,level,...msg]
             const direct = joincomma([...msg]);
             listener.forEach(_ => _(direct));
             const target = msg.shift() || "";

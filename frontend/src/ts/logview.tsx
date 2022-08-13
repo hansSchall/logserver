@@ -46,7 +46,7 @@ export function LogView(props: {
                             return null;
                         return <Badge color={typeToColor(parseInt(val))} onClick={() => {
                             openModalSelectLogLevel(stack);
-                        }}>{stack.join("/")}</Badge>
+                        }} key={key}>{stack.join("/")}</Badge>
                     } else {
                         return null
                     }
@@ -73,7 +73,7 @@ export function LogView(props: {
                             }).reduce((prev, curr) => {
                                 if (prev) return prev;
                                 return curr;
-                            }) || "0");
+                            }, undefined) || "0");
 
                             if (level < loglevelForStack) return null;
 
